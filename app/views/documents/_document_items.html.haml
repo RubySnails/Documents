@@ -1,0 +1,17 @@
+= f.fields_for :document_items do |di|
+  - di_item = di.object
+
+  = label_tag :item
+  = text_field_tag :item, nil,
+    class: 'document_item_autocomplete',
+    value: (di_item.item)
+
+  = di.label :item
+  = di.text_field :item
+
+  = di.label :quantity
+  = di.number_field :quantity, value: 1
+
+  = di.link_to_remove 'Remove'
+
+= f.link_to_add 'Add item', :document_items
