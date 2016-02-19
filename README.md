@@ -1,0 +1,1 @@
+Problem with search field added within nested_form
