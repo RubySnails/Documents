@@ -1,13 +1,13 @@
 = f.fields_for :document_items do |di|
-  - di_item = di.object
+  - di_item = di.object.item
 
-  = label_tag :item
-  = text_field_tag :item, nil,
+  = label_tag :item_search
+  = text_field_tag :item_search, nil,
     class: 'document_item_autocomplete',
-    value: (di_item.item)
+    value: (di_item.name if di_item),
+    data: {source: items_path}
 
-  = di.label :item
-  = di.text_field :item
+  = di.text_field :item_id
 
   = di.label :quantity
   = di.number_field :quantity, value: 1

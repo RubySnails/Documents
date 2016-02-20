@@ -70,6 +70,6 @@ class DocumentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
       params.require(:document).permit(:document_type_id,
-                                       document_items_attributes: [:item, :quantity, :_destroy])
+                                       document_items_attributes: [:item_id, :quantity, :_destroy])
     end
 end
